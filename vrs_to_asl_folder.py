@@ -5,8 +5,9 @@ from pathlib import Path
 
 import cv2
 from tqdm import tqdm
+import json
 
-from projectaria_tools.core import data_provider
+from projectaria_tools.core import data_provider, calibration
 from projectaria_tools.core.sensor_data import (
     TimeDomain,
     TimeQueryOptions,
@@ -195,6 +196,12 @@ def convert_vrs(vrs_file, output_folder):
         mav0 / "cam1" / "exposure.csv",
         dso / "cam1" / "times.txt",
     )
+
+    # Extract factory calibration
+    device_calib = provider.get_device_calibration()
+    calibration_json = calibration.device_calibration_to_json(device_calib)
+    with open(output_folder / "factory_calibration.json", "w") as f:
+        f.write(calibration_json)
     print("\n[DONE]")
 
 

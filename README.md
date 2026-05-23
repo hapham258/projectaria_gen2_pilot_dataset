@@ -13,6 +13,7 @@ viewer_mps --vrs $A2PD_PATH/walk_0/video.vrs
 
 export SLAM_DATASETS_PATH=$HOME/Documents/SLAM_Datasets
 python vrs_to_asl_folder.py --vrs_file $A2PD_PATH/walk_0/video.vrs --output_folder $SLAM_DATASETS_PATH/a2pd/walk_0/asl_folder
+python vrs_to_calib.py --vrs_file $A2PD_PATH/walk_0/video.vrs --output_folder $SLAM_DATASETS_PATH/a2pd/walk_0/asl_folder/calibs
 ```
 
 # Aria Gen2 Pilot Dataset
