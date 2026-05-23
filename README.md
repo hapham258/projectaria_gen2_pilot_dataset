@@ -10,6 +10,9 @@ export A2PD_PATH=/media/hapq/LDATA/SLAM_Datasets/A2PD
 aria_dataset_downloader -c $HOME/Desktop/a2pd_stuff/gen2pilot_download_urls.json -o $A2PD_PATH -l walk_0 -d 0 1 2 3
 aria_rerun_viewer --vrs $A2PD_PATH/walk_0/video.vrs
 viewer_mps --vrs $A2PD_PATH/walk_0/video.vrs
+
+export SLAM_DATASETS_PATH=$HOME/Documents/SLAM_Datasets
+python vrs_to_asl_folder.py --vrs_file $A2PD_PATH/walk_0/video.vrs --output_folder $SLAM_DATASETS_PATH/a2pd/walk_0/asl_folder
 ```
 
 # Aria Gen2 Pilot Dataset
