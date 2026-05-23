@@ -197,13 +197,6 @@ def convert_vrs(vrs_file, output_folder):
         dso / "cam1" / "times.txt",
     )
 
-    # Extract factory calibration
-    device_calib = provider.get_device_calibration()
-    calibration_json = calibration.device_calibration_to_json(device_calib)
-    with open(output_folder / "factory_calibration.json", "w") as f:
-        f.write(calibration_json)
-    print("\n[DONE]")
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
