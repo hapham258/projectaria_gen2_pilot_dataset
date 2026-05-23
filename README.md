@@ -1,3 +1,17 @@
+Setup:
+```
+conda create -n a2pd_all python=3.11
+conda activate a2pd_all
+python -m pip install projectaria-gen2-pilot-dataset'[all]'
+```
+Prepare data:
+```
+export A2PD_PATH=/media/hapq/LDATA/SLAM_Datasets/A2PD
+aria_dataset_downloader -c $HOME/Desktop/a2pd_stuff/gen2pilot_download_urls.json -o $A2PD_PATH -l walk_0 -d 0 1 2 3
+aria_rerun_viewer --vrs $A2PD_PATH/walk_0/video.vrs
+viewer_mps --vrs $A2PD_PATH/walk_0/video.vrs
+```
+
 # Aria Gen2 Pilot Dataset
 
 A Python package for loading, processing, and visualizing data from the Aria Gen2 Pilot Dataset. This dataset contains multimodal sensor data from Project Aria Gen2 glasses, including raw sensor streams, real-time machine perception outputs, and post-processed algorithm results.

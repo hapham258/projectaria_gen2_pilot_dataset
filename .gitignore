@@ -2,3 +2,4 @@ build/**
 dist/**
 wheels/**
 **.DS_Store
+settings.json
