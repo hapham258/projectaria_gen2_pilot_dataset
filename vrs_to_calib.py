@@ -11,10 +11,10 @@ def transform_to_qvec_tvec(pose):
     tvec = pose[:3, 3]
     qxyzw = scipyRot.from_matrix(R_mat).as_quat()
     qvec = [
-        float(qxyzw[3]),
         float(qxyzw[0]),
         float(qxyzw[1]),
         float(qxyzw[2]),
+        float(qxyzw[3]),
     ]
     return qvec, list(map(float, tvec))
 
